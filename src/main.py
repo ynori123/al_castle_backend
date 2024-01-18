@@ -13,7 +13,7 @@ from src.service import (
     write_data
 )
 
-app = FastAPI()
+app = FastAPI(docs_url=None, redoc_url=None, openapi_url=None)
 
 app.add_middleware(
     CORSMiddleware,
