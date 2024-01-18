@@ -26,21 +26,20 @@ app.mount("/image", StaticFiles(directory="image"), name="image")
 app.include_router(router=rt)
 logger = getLogger("uvicorn.app")
 
-
-@app.on_event("startup")
-def startup():
-    migrate()
-    try:
-        logger.info("start load data")
-        data = load_data()
-        logger.info("finish load data")
-        # logger.info(data)
-        logger.info("start write data")
-        write_data(data[0], data[1])
-        logger.info("finish write data")
-    except Exception as e:
-        logger.info(e)
-        pass
+# @app.on_event("startup")
+# def startup():
+#     migrate()
+#     try:
+#         logger.info("start load data")
+#         data = load_data()
+#         logger.info("finish load data")
+#         # logger.info(data)
+#         logger.info("start write data")
+#         write_data(data[0], data[1])
+#         logger.info("finish write data")
+#     except Exception as e:
+#         logger.info(e)
+#         pass
 
 def migrate():
     logger.info("create tables...")
