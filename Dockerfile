@@ -8,6 +8,7 @@ WORKDIR /app
 # 必要なファイルをコピー
 COPY ./requirements.txt /app/requirements.txt
 COPY ./.env /app/.env
+COPY ./castle_data.xlsx /app/castle_data.xlsx
 COPY ./image /app/image
 COPY ./src /app/src
 
